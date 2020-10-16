@@ -1,6 +1,6 @@
 # WABT
 
-Repository for [wabt](https://github.com/WebAssembly/wabt) docker image
+Repository for [wabt](https://github.com/WebAssembly/wabt) docker image - [thearqsz/wabt](https://hub.docker.com/r/thearqsz/wabt)
 
 ## Usage
 
