@@ -1,0 +1,25 @@
+FROM alpine
+
+RUN apk --no-cache add git cmake clang clang-dev gcc g++ make libc-dev linux-headers
+
+RUN rm -rf /tmp/* /var/tmp/*
+
+WORKDIR /opt
+
+RUN git clone --recursive https://github.com/WebAssembly/wabt
+
+WORKDIR /opt/wabt
+
+RUN mkdir bin \
+	&& cd bin \
+	&& cmake .. \
+	&& cmake --build .
+
+ENV PATH=/opt/wabt/bin:$PATH
+
+WORKDIR /src
+
+COPY ./entrypoint.sh /tmp/entrypoint.sh
+RUN chmod +x /tmp/entrypoint.sh
+
+CMD /bin/sh /tmp/entrypoint.sh
