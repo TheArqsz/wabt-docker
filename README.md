@@ -7,15 +7,15 @@ Repository for [wabt](https://github.com/WebAssembly/wabt) docker image
 It couldn't be simplier:
 
 1. Go to the directory of your choice e.g:
-```console
+```bash
 cd /mydir
 ```
 2. Pull this image:
-```console
+```bash
 docker pull thearqsz/wabt
 ```
 3. Run it!
-```console
+```bash
 docker run -it --rm -v $(pwd):/src -u  $(id -u):$(id -g) thearqsz/wabt <COMMAND>
 ```
 >Replace \<COMMAND\> with command of your choice:
